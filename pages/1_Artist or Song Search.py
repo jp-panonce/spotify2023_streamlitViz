@@ -162,7 +162,7 @@ with artistSearch_tab:
 
         # Display data of popular songs by selected artist
         st.dataframe(
-            toDisplay_songs_OfSearchedArtist.set_index(toDisplay_songs_OfSearchedArtist.columns[0]),
+            data = toDisplay_songs_OfSearchedArtist.set_index(toDisplay_songs_OfSearchedArtist.columns[0]),
             column_config= {
                 "track_name": "Song Name",
                 "artist(s)_name": "Artist/s",
@@ -171,7 +171,7 @@ with artistSearch_tab:
                     help="Number of streams for said song",
                     width="large",
                     format="%d",
-                    max_value= maxSongStreams
+                    max_value= int(maxSongStreams)
                 ),
                 
             }
